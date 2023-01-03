@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import DropDown from "./components/DropDown";
 import Translate from "./components/Translate";
 import Search from "./components/Search";
 import Accordion from "./components/Accordion";
 import Route from "./components/Route";
+import Header from "./components/Header";
 
 const items = [
   {
@@ -40,7 +41,8 @@ function App() {
   
   return ( 
 
-    <div>
+    <React.Fragment>
+      <Header />
       <Route path='/'>
         <Accordion items={items} />
       </Route>
@@ -62,7 +64,7 @@ function App() {
       <Route path='/translate'>
         <Translate />
       </Route>
-    </div>
+    </React.Fragment>
   ); 
 }
 
